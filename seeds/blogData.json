@@ -8,8 +8,16 @@
     "content": "Most things written in JS shouldn't be written in JS."
   },
   {
+    "title": "handlebars",
+    "content": "Pretty cool, actually."
+  },
+  {
+    "title": "npm",
+    "content": "isEven package has hundreds of thousands of weekly downloads..."
+  },
+  {
     "title": "node.js",
-    "content": "A good lesson in the worst outcomes of open source software."
+    "content": "A good foundation for bad software."
   }
 ]
 

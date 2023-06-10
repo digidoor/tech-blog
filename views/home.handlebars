@@ -1,19 +1,25 @@
-<h1>Here are some blog entries:</h1>
 <p>This is a handlebars page.</p>
-<p>Nodemon?</p>
+{{#if logged_in}}
+<p>You ARE logged in.</p>
+{{else}}
+<p>You are not logged in.</p>
+{{/if}}
 {{#if blogs.length}}
 <div class="blog-list">
-  <h3>Blogs:</h3>
+  <h1>Blogs:</h1>
 
   {{#each blogs as |blog|}}
   <div>
     <div>
-      <h4><a href="/project/{{blog.id}}">{{blog.title}}</a></h4>
+      <h4><a href="/blog/{{blog.id}}">{{blog.title}}</a></h4>
     </div>
     <div>
-      <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+      <button class="btn" data-id="{{blog.id}}">DELETE</button>
     </div>
   </div>
     {{/each}}
 </div>
 {{/if}}
+
+<p>To see all blogs: <a href="/api/blogs">Link</a></p>
+<p>To see all users: <a href="/api/users">Link</a></p>

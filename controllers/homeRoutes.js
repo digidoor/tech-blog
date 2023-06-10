@@ -22,7 +22,6 @@ router.get('/', async (req, res) =>
 			logged_in: req.session.logged_in
 		});
 		console.log("blogs: ", blogs);
-		//res.status(200).json(blogs);
 	} catch (error) { res.status(500).json(error); }
 });
 
