@@ -2,7 +2,7 @@ const router = require('express').Router();
 
 router.get('/', (req, res) =>
 {
-    res.json({ name: 'bob', role: 'be bob' });
+    res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
 
