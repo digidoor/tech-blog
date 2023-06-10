@@ -33,14 +33,14 @@ router.get('/blogs', async (req, res) =>
 	try
 	{
 		const blogData = await Blog.findAll({
-			attributes: { exclude: ['createdAt', 'updatedAt'] },
-			order: [['title', 'ASC']],
-			// include: [
-			// 	{
-			// 		model: User,
-			// 		attributes: ['name'],
-			// 	},
-			// ],
+			// attributes: { exclude: ['createdAt', 'updatedAt'] },
+			// order: [['title', 'ASC']],
+			include: [
+				{
+					model: User,
+					attributes: ['name'],
+				},
+			],
 		});
 		//console.log("userData: ", userData);
 		const blogs = blogData.map( blog => blog.get({plain:true}));
