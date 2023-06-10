@@ -30,14 +30,15 @@ const sess = {
 
 app.use(session(sess));
 
-app.get('/test', (req, res) => res.sendFile(path.join(__dirname, 'test.html')));
+app.get('/test', (req, res) => res.sendFile(path.join(__dirname, 'public/test.html')));
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
+//app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('public'));
 
 app.use(routes);
 
