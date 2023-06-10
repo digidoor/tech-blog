@@ -1,2 +1,19 @@
 <h1>Here are some blog entries:</h1>
 <p>This is a handlebars page.</p>
+<p>Nodemon?</p>
+{{#if blogs.length}}
+<div class="blog-list">
+  <h3>Blogs:</h3>
+
+  {{#each blogs as |blog|}}
+  <div>
+    <div>
+      <h4><a href="/project/{{blog.id}}">{{blog.title}}</a></h4>
+    </div>
+    <div>
+      <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+    </div>
+  </div>
+    {{/each}}
+</div>
+{{/if}}

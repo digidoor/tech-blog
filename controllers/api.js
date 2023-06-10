@@ -3,20 +3,12 @@ const { User, Blog } = require('../models');
 
 router.get('/users', async (req, res) =>
 {
-	var x;
 	try
 	{
 		const userData = await User.findAll({
 			attributes: { exclude: ['password'] },
 			order: [['name', 'ASC']],
-			// include: [
-			// 	{
-			// 		model: User,
-			// 		attributes: ['name'],
-			// 	},
-			// ],
 		});
-		//console.log("userData: ", userData);
 		const users = userData.map( user => user.get({plain:true}));
 		// res.render('home', {
 		// 	users,
@@ -29,7 +21,6 @@ router.get('/users', async (req, res) =>
 
 router.get('/blogs', async (req, res) =>
 {
-	var x;
 	try
 	{
 		const blogData = await Blog.findAll({
@@ -42,7 +33,6 @@ router.get('/blogs', async (req, res) =>
 				},
 			],
 		});
-		//console.log("userData: ", userData);
 		const blogs = blogData.map( blog => blog.get({plain:true}));
 		// res.render('home', {
 		// 	users,
